@@ -1,4 +1,5 @@
 
+```` markdown
 # 🛡️ Aegis Wallet: The AI-Powered Cross-Chain Guardian
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -35,7 +36,7 @@ A brief walkthrough of the Aegis Wallet's core functionality.
 Aegis Wallet is a full-stack application that combines on-chain logic, a backend server, and a modern frontend.
 
 * **Blockchain & Smart Contract**:
-    * **Chain**: ZetaChain Athens 3 Testnet
+    * **Chain**: ZetaChain Testnet
     * **Language**: Solidity
     * **Development**: Remix IDE
     * **Final Contract Address**: `0xe39d3f45873CCa6EC1364f726b5a71c061FD59D8`
@@ -72,7 +73,7 @@ Follow these steps to run the project on your local machine.
 
 * Node.js (v18 or later)
 * NPM or Yarn
-* A Web3 wallet like MetaMask, configured for the ZetaChain Athens 3 Testnet.
+* A Web3 wallet like MetaMask, configured for the **ZetaChain Testnet**.
 
 ### 1. Backend Setup
 
@@ -136,6 +137,3 @@ This project was a true test of perseverance. The initial build was straightforw
 ## 📄 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-```
-```
