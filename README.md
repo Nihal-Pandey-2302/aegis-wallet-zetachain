@@ -1,5 +1,4 @@
 
-```` markdown
 # 🛡️ Aegis Wallet: The AI-Powered Cross-Chain Guardian
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
