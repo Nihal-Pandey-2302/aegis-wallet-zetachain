@@ -8,12 +8,14 @@ import { fetchPortfolio, TokenBalance } from '@/services/portfolioService';
 import { AEGIS_VAULT_ADDRESS, AEGIS_VAULT_ABI } from '@/lib/constants';
 import toast from 'react-hot-toast'; // <-- Import toast
 
+// You can now delete the TransactionStatus component and its import
+
 export function WithdrawForm() {
   const { address } = useAccount();
   const [selectedToken, setSelectedToken] = useState<TokenBalance | null>(null);
   const [amount, setAmount] = useState('');
 
-  // The hook now gives us an async function perfect for toasts
+  // The hook gives us isPending for the button state, and writeContractAsync for the toast
   const { isPending, writeContractAsync } = useWriteContract();
 
   // Fetch user's portfolio to populate the dropdown
@@ -30,12 +32,12 @@ export function WithdrawForm() {
     }
   }, [portfolio, selectedToken]);
 
-  // Make the handler async
+  // Make the handler async to work with toast.promise
   const handleWithdraw = async () => {
     if (!selectedToken || !amount) return;
     const amountAsBigInt = parseUnits(amount, selectedToken.decimals);
 
-    // Wrap the async contract call with toast.promise
+    // This handles all the loading, success, and error notifications
     await toast.promise(
       writeContractAsync({
         address: AEGIS_VAULT_ADDRESS,
@@ -44,13 +46,13 @@ export function WithdrawForm() {
         args: [selectedToken.tokenAddress as `0x${string}`, amountAsBigInt],
       }),
       {
-        loading: 'Confirming transaction...',
+        loading: 'Confirming transaction in wallet...',
         success: () => {
-          // Refetch portfolio data on success
-          refetch();
+          // In a deployed app, you might want a slight delay before refetching
+          setTimeout(() => refetch(), 2000); 
           return 'Withdrawal successful!';
         },
-        error: (err) => err.shortMessage || 'Transaction failed.',
+        error: (err: { shortMessage: string }) => err.shortMessage || 'Transaction failed.',
       }
     );
   };
@@ -64,7 +66,8 @@ export function WithdrawForm() {
     <div className="w-full max-w-md mx-auto">
       <div className="bg-gray-800 p-8 rounded-xl border border-gray-700 space-y-6">
         <h2 className="text-2xl font-bold text-center">Withdraw Assets</h2>
-        {/* Token Selection Dropdown and Amount Input remain the same */}
+
+        {/* The form JSX remains the same */}
         <div className="space-y-2">
           <label htmlFor="token" className="text-sm font-medium text-gray-400">Token</label>
           <select
@@ -74,13 +77,9 @@ export function WithdrawForm() {
             disabled={isLoadingPortfolio || !portfolio || portfolio.length === 0}
             className="w-full p-3 bg-gray-900 border border-gray-600 rounded-md focus:ring-2 focus:ring-cyan-500 focus:outline-none"
           >
-            {isLoadingPortfolio ? (
-              <option>Loading tokens...</option>
-            ) : (
+            {isLoadingPortfolio ? (<option>Loading tokens...</option>) : (
               portfolio?.map(token => (
-                <option key={token.tokenAddress} value={token.tokenAddress}>
-                  {token.symbol}
-                </option>
+                <option key={token.tokenAddress} value={token.tokenAddress}>{token.symbol}</option>
               ))
             )}
           </select>
@@ -104,7 +103,7 @@ export function WithdrawForm() {
           {isPending ? 'Confirming...' : 'Withdraw'}
         </button>
       </div>
-      {/* The old TransactionStatus component is no longer needed */}
+      {/* The TransactionStatus component is now deleted */}
     </div>
   );
 }
