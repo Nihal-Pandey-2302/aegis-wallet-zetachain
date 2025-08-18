@@ -20,13 +20,9 @@ This project is fully deployed and live. Try it now!
 
 ---
 
-## 📽️ Demo Video & Screenshots
+## 📽️ Demo Video 
 
-A brief walkthrough of the Aegis Wallet's core functionality.
-
-*Insert a link to your 2–3 minute demo video here (YouTube link or GIF).*  
-
-*Add a screenshot of your polished UI showing the portfolio and the AI analysis.*  
+- **Demo Video** [https://youtu.be/qvYYsUDf4kg]
 
 ---
 
