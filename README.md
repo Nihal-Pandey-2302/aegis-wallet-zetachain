@@ -1,5 +1,7 @@
 # 🛡️ Aegis Wallet: The AI-Powered Cross-Chain Guardian
 
+[![Frontend Status](https://img.shields.io/badge/Frontend-Live_on_Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://aegis-wallet-zetachain.vercel.app/)
+[![Backend Status](https://img.shields.io/badge/Backend-Live_on_Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://aegis-wallet-backend-zetachain.onrender.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ZetaChain](https://img.shields.io/badge/Chain-ZetaChain-10B5F3)](https://www.zetachain.com/)
 [![Google Cloud](https://img.shields.io/badge/AI-Google_Cloud-4285F4)](https://cloud.google.com/)
@@ -9,13 +11,22 @@ It acts as an intelligent smart contract vault that leverages the Google Gemini 
 
 ---
 
+## 🚀 Live Demo
+
+This project is fully deployed and live. Try it now!
+
+- **Frontend (Vercel):** [https://aegis-wallet-zetachain.vercel.app/](https://aegis-wallet-zetachain.vercel.app/)  
+- **Backend API (Render):** [https://aegis-wallet-backend-zetachain.onrender.com/](https://aegis-wallet-backend-zetachain.onrender.com/)  
+
+---
+
 ## 📽️ Demo Video & Screenshots
 
 A brief walkthrough of the Aegis Wallet's core functionality.
 
-*Insert a link to your 2–3 minute demo video here (YouTube link or GIF).*
+*Insert a link to your 2–3 minute demo video here (YouTube link or GIF).*  
 
-*Add a screenshot of your polished UI showing the portfolio and the AI analysis.*
+*Add a screenshot of your polished UI showing the portfolio and the AI analysis.*  
 
 ---
 
@@ -29,28 +40,32 @@ A brief walkthrough of the Aegis Wallet's core functionality.
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## 🛠️ Tech Stack
 
-Aegis Wallet is a full-stack application that combines on-chain logic, a backend server, and a modern frontend.
+| Layer       | Technology                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| **Blockchain** | [![ZetaChain](https://img.shields.io/badge/ZetaChain-Testnet-10B5F3?logo=blockchaindotcom&logoColor=white)](https://www.zetachain.com/) |
+| **Smart Contracts** | ![Solidity](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=white) • [Remix IDE](https://remix.ethereum.org/) |
+| **Backend** | ![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white) • ![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white) • ![Ethers.js](https://img.shields.io/badge/Ethers.js-2536EC?logo=ethereum&logoColor=white) |
+| **AI Integration** | [![Google Gemini](https://img.shields.io/badge/Google_Gemini-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/) |
+| **Frontend** | ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white) • ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) • ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) |
+| **Styling** | ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white) |
+| **Web3 Tools** | ![wagmi](https://img.shields.io/badge/wagmi-3C3C3D?logo=ethereum&logoColor=white) • ![RainbowKit](https://img.shields.io/badge/RainbowKit-1A1A1A?logo=rainbow&logoColor=FF007A) |
+| **UI/UX** | ![React Hot Toast](https://img.shields.io/badge/react--hot--toast-F87171?logo=react&logoColor=white) • ![React Markdown](https://img.shields.io/badge/react--markdown-000000?logo=markdown&logoColor=white) |
 
-- **Blockchain & Smart Contract**:
-  - **Chain**: ZetaChain Testnet  
-  - **Language**: Solidity  
-  - **Development**: Remix IDE  
-  - **Final Contract Address**: `0xe39d3f45873CCa6EC1364f726b5a71c061FD59D8`  
+---
 
-- **Backend (The Brain)**:
-  - **Runtime**: Node.js  
-  - **Framework**: Express.js  
-  - **Web3 Library**: Ethers.js  
-  - **AI Integration**: Google Gemini API (`@google/generative-ai`)  
+## ⚙️ Architecture Overview
 
-- **Frontend (The Face)**:
-  - **Framework**: Next.js (React)  
-  - **Language**: TypeScript  
-  - **Styling**: Tailwind CSS  
-  - **Web3 Connection**: `wagmi` & `RainbowKit`  
-  - **UX**: `react-hot-toast` for notifications, `react-markdown` for AI output.  
+```mermaid
+flowchart TD
+    A[💻 User Interface<br/>Next.js + RainbowKit] -->|Wallet Connect| B[(ZetaChain Testnet<br/>Smart Contract Vault)]
+    A -->|API Calls| C[🧠 Backend<br/>Node.js + Express + Ethers.js]
+    C -->|Portfolio Data| D[🤖 Google Gemini API]
+    D -->|AI Analysis| A
+    B -->|On-chain Swaps & Withdrawals| A
+```
+
 
 ### Application Flow
 
@@ -61,7 +76,7 @@ Aegis Wallet is a full-stack application that combines on-chain logic, a backend
 
 ---
 
-## 🚀 Getting Started: Local Setup
+## ⚡ Getting Started: Local Setup
 
 Follow these steps to run the project on your local machine.
 
